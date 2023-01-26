@@ -75,15 +75,7 @@ class _MyAppState extends State<MyApp> {
               future: futureAlbum,
               builder: (context, snapshot) {
                 if (snapshot.hasData) {
-                  return Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      ListTile(
-                        leading: Text(snapshot.data!.userId.toString()),
-                        title: Text(snapshot.data!.title),
-                      )
-                    ],
-                  );
+                  return Text(snapshot.data!.title);
                 } else if (snapshot.hasError) {
                   return Text('${snapshot.error}');
                 }
